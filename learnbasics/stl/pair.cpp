@@ -18,9 +18,6 @@ void explain_pair(){
     cout<<arr[1].second<<endl; //this will print 4
 }
 
-void explain_vector(){
-    vector<int
-}
 int main (){
 
     explain_pair();
