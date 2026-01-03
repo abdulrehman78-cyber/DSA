@@ -62,6 +62,12 @@ void explain_iterator(){
      
     v.pop_back();
 
+    // v1.swap(v2) this will swap the vector v2 and v1 
+
+    v.clear();
+
+    v.empty(); //return true if vector has no elements
+    
     
 }
 
