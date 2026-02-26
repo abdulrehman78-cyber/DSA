@@ -22,7 +22,7 @@ void explain_STL_sort(){
     //sort(a,a+n,comp) now what is comp ?? it is nothing but self comperator it is a  boolean function mention below
 
     pair<int ,int> a[] = {{1,2},{3,2}}; //now we will sort using comperator
-    sort(a,a+3,comp);
+    sort(a,a+2,comp);
     
 }
 
@@ -32,9 +32,19 @@ void bin(){
 
     long long Num = 18497950873947;
     int count = __builtin_popcountll(Num); 
+
+    //okay for permutations
+    string s = "123";
+    do{
+        cout<<s<<endl;
+    }while(next_permutation(s.begin(),s.end()));
+
+    // if we want next max element then 
+    // int maxi = *max_element(a,a+n);
 }
 
 int main(){
     explain_STL_sort();
+    bin();
     return 0;
 }
