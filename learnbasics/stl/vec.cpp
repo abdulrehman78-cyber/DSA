@@ -25,7 +25,7 @@ void explain_iterator(){
     vec.push_back(3);
     vec.push_back(4);
 
-    //Iterator is nothing but the point to the memory
+    //Iterator is nothing but the pointer to the memory
     vector<int>::iterator it = vec.begin(); //now this will create a pointer name it which points at the begin of vector
     it++; //We can also do this now this will point to 1 index which contain 2
     cout<<*(it)<<" "; //2
