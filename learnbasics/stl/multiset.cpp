@@ -1,3 +1,4 @@
+//It also obeys the set like it is also sorted but can store multiple same value no unique condition
 #include <bits/stdc++.h>
 using namespace std;
 void explain_multiset(){
