@@ -16,6 +16,7 @@ int countNum(int n){
     return cnt;
 
 }
+//Reverse Number
 int reverseNum(int n){
     int reversedNum = 0;
     for(int i = n;i>0;i = i/10){
@@ -24,6 +25,7 @@ int reverseNum(int n){
     }
     return reversedNum;
 }
+//Palindrome
 bool is_Palin(int n){
     int reversedNum = 0;
     for(int i = n;i>0;i = i/10){
@@ -33,10 +35,79 @@ bool is_Palin(int n){
     if(n==reversedNum) return true;
     else return false;
 }
+//Armstrong
+bool is_ArmStrong(int n ){
+    if(n <= 0) return false;
+    int arm = 0;
+    int expo = countNum(n);
+    int base = 0;
+    for(int i = n;i>0;i = i/10){
+        int multiple = 1;
+        base = i%10;
+        for(int j = 1;j<=expo;j++){
+            multiple  = multiple * base;
+        }
+        arm = arm + multiple;
+    }
+    if (arm == n) return true;
+    else return false; 
+}
+//Print All dividors
+vector<int> getDivisor(int n){
+    vector<int> res;
+    // Brute force
+    // if(n <= 0) cout<<"Invalid input!!"<<endl;
+    // int divisor = 0;
+    // for(int i = 1;i<=n;i++){
+    //     if( n % i == 0 )
+    //     res.push_back(i);
+    // }
+    // return res;
+
+    //Optimal
+
+    for(int i = 1;i*i <=n;i++){
+        
+        if(n%i == 0){
+        res.push_back(i);
+
+            if(i != n/i)
+            res.push_back(n/i);
+        }
+    }
+    sort(res.begin(),res.end());
+    return res;
+}
+
+//Check weather it is prime or not
+bool is_Prime(int n){
+    int cnt = 0;
+    for(int i = 1; i*i<=n;i++){
+        if(n%i == 0 )
+        {
+            cnt++;   
+            if (n/i != i)
+            {
+                cnt++;
+            }
+        }
+        
+    }
+    if(cnt == 2) return true;
+    else return false;
+}
+
+
 int main(){
     // cout<<countNum(12345);
     // cout<<reverseNum(12345);
-    cout<<is_Palin(123);
+    // cout<<is_Palin(123);
+    // cout<<is_ArmStrong(153);
+    // vector<int> result = getDivisor(36);
+    // for (int val  : result){
+    //     cout<<val<<" ";
+    // }
+    // cout<<is_Prime(2);
 
     return 0;
 }
