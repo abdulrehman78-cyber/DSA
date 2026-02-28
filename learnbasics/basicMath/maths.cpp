@@ -78,23 +78,27 @@ vector<int> getDivisor(int n){
     sort(res.begin(),res.end());
     return res;
 }
-
 //Check weather it is prime or not
 bool is_Prime(int n){
-    int cnt = 0;
-    for(int i = 1; i*i<=n;i++){
+   
+    for(int i = 2; i*i<=n;i++){
         if(n%i == 0 )
-        {
-            cnt++;   
-            if (n/i != i)
-            {
-                cnt++;
-            }
+        {   
+            return false;   
         }
         
     }
-    if(cnt == 2) return true;
-    else return false;
+    return true;
+}
+//GCD/HCF
+int gcd(int n1,int n2){
+    int gcd = 1;
+    for(int i = min(n1,n2);i>0;i--){
+        if(n1%i==0 && n2%i==0){
+            return  i;
+        }
+    }
+    return 1;    
 }
 
 
@@ -107,7 +111,10 @@ int main(){
     // for (int val  : result){
     //     cout<<val<<" ";
     // }
-    // cout<<is_Prime(2);
+    // cout<<is_Prime(7);
+    // cout<<gcd(20,15);
+
+
 
     return 0;
 }
